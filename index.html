@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>MFK – Manpower For Careers | Saudi Arabia Job Portal</title>
+<title>MFK – Manpower For Careers | Jobs in Saudi Arabia</title>
 
-<meta name="description" content="MFK Manpower For Careers job portal for Saudi Arabia. View applicants and manage job applications in Jeddah, Riyadh and across KSA.">
+<meta name="description" content="Apply for jobs in Saudi Arabia through MFK Manpower For Careers. Submit your application online for jobs in Jeddah, Riyadh and across KSA.">
 
-<meta name="keywords" content="jobs Saudi Arabia, manpower jobs KSA, MFK careers, driver jobs Riyadh, cleaner jobs Jeddah, apply jobs Saudi Arabia">
+<meta name="keywords" content="jobs Saudi Arabia, apply jobs KSA, manpower jobs Saudi Arabia, driver jobs Jeddah, cleaner jobs Riyadh, MFK careers">
 
 <style>
 :root {
@@ -20,91 +20,109 @@
     --border: #238a8b;
 }
 
+body.light {
+    --bg: #fff;
+    --text: #000;
+    --card: #f5f5f5;
+    --accent: #238a8b;
+    --muted: #333;
+    --border: #238a8b;
+}
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
     background: var(--bg);
     color: var(--text);
+    transition: 0.3s;
 }
 
 /* HEADER */
 header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 15px 20px;
+    justify-content: space-between;
+    padding: 20px;
+    border-bottom: 2px solid var(--border);
     background: var(--card);
-    border-bottom: 2px solid var(--accent);
 }
 
 .logo {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 15px;
 }
 
 .logo img {
-    width: 55px;
-    height: 55px;
+    width: 60px;
+    height: 60px;
     object-fit: contain;
-    border-radius: 6px;
 }
 
-.logo h1 {
+.logo-text h1 {
     margin: 0;
-    font-size: 18px;
+    font-size: 20px;
     color: var(--accent);
 }
 
+.logo-text p {
+    margin: 0;
+    font-size: 12px;
+    color: var(--muted);
+}
+
+/* BUTTONS */
 .btn {
-    padding: 10px 14px;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
     background: var(--accent);
     color: white;
-    border: none;
     border-radius: 5px;
+    font-size: 14px;
+    margin-left: 10px;
     text-decoration: none;
-    cursor: pointer;
-    font-size: 14px;
-    margin-left: 8px;
+    display: inline-block;
 }
 
-/* STATS */
-.stats {
-    display: flex;
-    gap: 10px;
-    padding: 15px;
+/* MAIN */
+.container {
+    text-align: center;
+    padding: 70px 20px;
 }
 
-.box {
-    background: var(--card);
-    border: 1px solid var(--accent);
-    padding: 10px;
-    border-radius: 6px;
-}
-
-/* TABLE */
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-th, td {
-    border: 1px solid #222;
-    padding: 10px;
-    font-size: 14px;
-}
-
-th {
+h2 {
     color: var(--accent);
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+p {
+    max-width: 700px;
+    margin: auto;
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+/* APPLY BUTTON */
+.apply-btn {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 14px 25px;
+    background: var(--accent);
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 16px;
 }
 
 /* FOOTER */
-.footer {
+footer {
     text-align: center;
     padding: 20px;
-    font-size: 12px;
     color: var(--muted);
-    cursor: pointer;
+    border-top: 1px solid #222;
+    margin-top: 50px;
 }
 </style>
 
@@ -114,13 +132,17 @@ th {
 
 <header>
     <div class="logo">
-        <!-- YOUR LOGO FILE (UPLOAD IN GITHUB AS logo.png) -->
+        <!-- LOCAL LOGO (FAST LOAD - NO DELAY) -->
         <img src="logo.png" alt="MFK Logo">
-        <h1>MFK Dashboard</h1>
+
+        <div class="logo-text">
+            <h1>MFK – Manpower For Careers</h1>
+            <p>Connecting Talent with Opportunity in Saudi Arabia</p>
+        </div>
     </div>
 
     <div>
-        <button class="btn" onclick="location.reload()">Refresh</button>
+        <button class="btn" onclick="toggleMode()">Toggle Mode</button>
 
         <!-- PLACEHOLDER WEBSITE BUTTON -->
         <a class="btn" href="YOUR_WEBSITE_LINK_HERE" target="_blank">
@@ -129,62 +151,27 @@ th {
     </div>
 </header>
 
-<!-- STATS -->
-<div class="stats">
-    <div class="box" id="total">Loading...</div>
+<div class="container">
+    <h2>Apply for Jobs in Saudi Arabia</h2>
+
+    <p>
+        MFK – Manpower For Careers is a professional job portal connecting job seekers with employers across Saudi Arabia.
+        Apply for cleaner, driver, waiter, helper and other manpower jobs in Jeddah, Riyadh and across KSA.
+    </p>
+
+    <a class="apply-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSd0uN9HyaC37ZsNFkKsbxoikcdNzmtkAsiAichJXeHDJFszzw/viewform?usp=dialog" target="_blank">
+        Apply Now
+    </a>
 </div>
 
-<!-- TABLE -->
-<table>
-    <thead>
-        <tr>
-            <th>Full Name</th>
-            <th>Sector</th>
-            <th>Position</th>
-            <th>Experience</th>
-            <th>Details</th>
-        </tr>
-    </thead>
-    <tbody id="data"></tbody>
-</table>
-
-<!-- FOOTER PASSWORD -->
-<div class="footer" onclick="showPassHint()">
-Made by Mohammad Faizan Khan
-</div>
+<footer>
+    © 2026 MFK – Manpower For Careers. All rights reserved.
+</footer>
 
 <script>
-
-function showPassHint(){
-    let p = prompt("Enter admin password:");
-    if(p === "FaizanKhan"){
-        alert("Access granted");
-    } else {
-        alert("Wrong password");
-    }
+function toggleMode() {
+    document.body.classList.toggle("light");
 }
-
-fetch("https://script.google.com/macros/s/AKfycbwQrfA-SXl-yMQPcC3VIerNMAM2U7j9CLvVtWf6IXmHJSVX6CWSHwvB2Lo4qECk0oE45A/exec")
-.then(res => res.json())
-.then(data => {
-
-    document.getElementById("total").innerHTML = "Total Applicants: " + data.length;
-
-    let table = document.getElementById("data");
-
-    data.forEach(item => {
-        table.innerHTML += `
-        <tr>
-            <td>${item["Full Name"]}</td>
-            <td>${item["Which sector are you applying for?"]}</td>
-            <td>${item["Position"]}</td>
-            <td>${item["Total Experience (Years)"]}</td>
-            <td>${item["Experience Details (Optional)"]}</td>
-        </tr>`;
-    });
-
-});
-
 </script>
 
 </body>
